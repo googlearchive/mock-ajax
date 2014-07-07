@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Mock-Ajax Example</title>
+
+<style>
+  body {
+    font-family: sans-serif;
+  }
+</style>
+  
+<script src="../platform/platform.js"></script>
+<link rel="import" href="../polymer/polymer.html">
+  
+<!-- import one of the mocks before anything else -->
+
+<!-- do-nothing mock -->
+<!-- <link rel="import" href="no-ajax.html"> -->
+<!-- configurable mock -->
+<link rel="import" href="mock-ajax.html">
+
+<!-- some element importing core-ajax after here is fine -->
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+</head>
+<body>
+ 
+<core-ajax url="http://google.com" auto></core-ajax>
+
+<script>
+  addEventListener('core-response', function(e) {
+    console.log(e.detail.response);
+  });
+</script>
+  
+</body>
+</html>
