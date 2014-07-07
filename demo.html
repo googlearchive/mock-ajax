@@ -20,6 +20,7 @@
 
 <!-- do-nothing mock -->
 <!-- <link rel="import" href="no-ajax.html"> -->
+
 <!-- configurable mock -->
 <link rel="import" href="mock-ajax.html">
 
@@ -28,7 +29,14 @@
 
 </head>
 <body>
- 
+
+<script>
+  MockAjax = {
+    latency: 100,
+    response: '{"mock": "dummy"}'
+  };
+</script> 
+
 <core-ajax url="http://google.com" auto></core-ajax>
 
 <script>
