@@ -7,13 +7,13 @@ Platform.mixin(Polymer.getRegisteredPrototype('core-ajax'), {
     this.async(function() {
       this.xhr.responseText = MockAjax.response;
       this.processResponse(this.xhr); 
-    }, null, MockAjax.response);
+    }, null, MockAjax.latency);
   }
 });
   
 // export
 MockAjax = {
- latency: 100,
+ latency: 1,
  response: '{"mock": "data"}'
 };
 
