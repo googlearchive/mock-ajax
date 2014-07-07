@@ -1,15 +1,10 @@
 <link rel="import" href="../core-ajax/core-ajax.html">
 
 <script>
-(function() {
   
-  var doNothingAjaxApi = {
-    go: function() {
-    }
-  };
+Platform.mixin(Polymer.getRegisteredPrototype('core-ajax'), {
+  go: function() {
+  }
+});
 
-  var ca = Polymer.getRegisteredPrototype('core-ajax');
-  Platform.mixin(ca, doNothingAjaxApi);
-
-})();
 </script>

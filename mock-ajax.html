@@ -1,19 +1,15 @@
 <link rel="import" href="../core-ajax/core-ajax.html">
 
 <script>
-(function() {
 
-var mockAjaxApi = {
+Platform.mixin(Polymer.getRegisteredPrototype('core-ajax'), {
   go: function() {
     this.async(function() {
       this.xhr.responseText = MockAjax.response;
       this.processResponse(this.xhr); 
     }, null, MockAjax.response);
   }
-};
-
-var ca = Polymer.getRegisteredPrototype('core-ajax');
-Platform.mixin(ca, mockAjaxApi);
+});
   
 // export
 MockAjax = {
@@ -21,5 +17,4 @@ MockAjax = {
  response: '{"mock": "data"}'
 };
 
-})();
 </script>
